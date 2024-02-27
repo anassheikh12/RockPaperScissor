@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <style>
+    .btn{
+        margin: 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 class="text-center display-4" >Rock-Paper-Scissors Game</h1>
+        <div align="center">
+          <button class="btn" onclick="playGame('rock')"><img src="Images/rock.png" alt=""></button>
+          <button class="btn" onclick="playGame('paper')"><img src="Images/paper.png" alt=""></button>
+          <button class="btn" onclick="playGame('scissors')"><img src="Images/scissors.png" alt=""></button>
+        </div>
+        <div align="center"> 
+            <h4 id="comp"></h4>
+            <h4 id="result" class="display-3"></h4>
+        </div>
+      </div>
+    <script>
+        function ComputerChoice() {
+            const choices = ['rock', 'paper', 'scissors'];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+
+        function determineWinner(playerChoice, computerChoice) {
+        if (playerChoice === computerChoice) {
+            return 'Tie';
+        }
+
+        if (
+            (playerChoice === 'rock' && computerChoice === 'scissors') ||
+            (playerChoice === 'paper' && computerChoice === 'rock') ||
+            (playerChoice === 'scissors' && computerChoice === 'paper')
+        ) {
+            return 'You win!';
+        } else {
+            return 'You lose!';
+        }
+        }
+
+        function playGame(playerChoice) {
+        const computerChoice = ComputerChoice();
+        document.getElementById("comp").innerHTML = "Computer choice: "+computerChoice;
+        document.getElementById("result").innerHTML = determineWinner(playerChoice, computerChoice);
+        }
+    </script>
+  </body>
+</html>
