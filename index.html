@@ -21,6 +21,9 @@
         </div>
         <div align="center"> 
             <h4 id="comp"></h4>
+            <div id="img" align="center">
+              
+            </div>
             <h4 id="result" class="display-3"></h4>
         </div>
       </div>
@@ -49,8 +52,17 @@
 
         function playGame(playerChoice) {
         const computerChoice = ComputerChoice();
+          document.getElementById("img") = var img;
           document.getElementById("comp") = var comp;
           var comp.innerHTML = "Computer choice: "+computerChoice;
+          if(computerChoice === 'rock'){
+            var img.innerHTML = "<img src=\"Images/rock.png">";
+          }elseif(computerChoice === 'paper'){
+             var img.innerHTML = "<img src=\"Images/paper.png">"; 
+          }else{
+            var img.innerHTML = "<img src=\"Images/scissors.png">";
+          }
+          
         document.getElementById("result").innerHTML = determineWinner(playerChoice, computerChoice);
         }
     </script>
