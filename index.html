@@ -55,13 +55,13 @@
           document.getElementById("img") = var img;
           document.getElementById("comp") = var comp;
           var comp.innerHTML = "Computer choice: "+computerChoice;
-          if(computerChoice === 'rock'){
-            var img.innerHTML = "<img src="Images/rock.png">";
-          }elseif(computerChoice === 'paper'){
-             var img.innerHTML = "<img src="Images/paper.png">"; 
-          }else{
-            var img.innerHTML = "<img src="Images/scissors.png">";
-          };
+          // if(computerChoice === 'rock'){
+          //   var img.innerHTML = "<img src="Images/rock.png">";
+          // }elseif(computerChoice === 'paper'){
+          //    var img.innerHTML = "<img src="Images/paper.png">"; 
+          // }else{
+          //   var img.innerHTML = "<img src="Images/scissors.png">";
+          // };
           
         document.getElementById("result").innerHTML = determineWinner(playerChoice, computerChoice);
         }
