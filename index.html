@@ -49,7 +49,8 @@
 
         function playGame(playerChoice) {
         const computerChoice = ComputerChoice();
-        document.getElementById("comp").innerHTML = "Computer choice: "+computerChoice;
+          document.getElementById("comp") = var comp;
+          var comp.innerHTML = "Computer choice: "+computerChoice;
         document.getElementById("result").innerHTML = determineWinner(playerChoice, computerChoice);
         }
     </script>
