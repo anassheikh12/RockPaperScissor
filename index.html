@@ -21,9 +21,6 @@
         </div>
         <div align="center"> 
             <h4 id="comp"></h4>
-            <div id="img" align="center">
-              
-            </div>
             <h4 id="result" class="display-3"></h4>
         </div>
       </div>
@@ -52,11 +49,9 @@
 
         function playGame(playerChoice) {
         const computerChoice = ComputerChoice();
-         
-          document.getElementById("comp") = var comp;
-          var comp.innerHTML = "Computer choice: "+computerChoice;
-          
-          
+        
+        document.getElementById("comp").innerHTML = "Computer choice: "+computerChoice;
+    
         document.getElementById("result").innerHTML = determineWinner(playerChoice, computerChoice);
         }
     </script>
